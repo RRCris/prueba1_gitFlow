@@ -11,7 +11,7 @@ describe("server", () => {
 
   it("post", async () => {
     const res = await api.post("/").query({ msg: "OK" });
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(300);
     expect(res.body.msg).toBe("Ok");
   });
 });
