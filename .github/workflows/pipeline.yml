@@ -30,5 +30,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_TOKEN}}
           heroku_app_name: ${{secrets.HEROKU_APP}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          healthcheck: https//:${{secrets.HEROKU_APP}}.herokuapp.com/health
+          healthcheck: https://${{secrets.HEROKU_APP}}.herokuapp.com/health
           rollbackonhealthcheckfailed: true
