@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/sports", (req, res) => {
-  res.status(200).json({ msg: "aqui van a aparecer lso deportes" });
+  res.status(200).json({ sports: ["football", "basketball", "baseball"] });
 });
 
 app.post("/", (req, res) => {
