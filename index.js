@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
   res.status(200).json({ msg: "this is the main branch" });
 });
 
+app.get("/sports", (req, res) => {
+  res.status(200).json({ msg: "aqui van a aparecer lso deportes" });
+});
+
 app.post("/", (req, res) => {
   if (req.query.msg === "OK") {
     res.status(200).json({ msg: "Ok" });

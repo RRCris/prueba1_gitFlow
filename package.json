@@ -1,11 +1,10 @@
 {
   "name": "gitflow",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --silent main.test.js",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +25,9 @@
   },
   "devDependencies": {
     "jest": "^28.1.2"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }
