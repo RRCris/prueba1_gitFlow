@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  dev:
+  testing:
     runs-on: ubuntu-18.04
     steps:
       - name: checkout
@@ -19,3 +19,5 @@ jobs:
           node-version: 14
       - name: install dependencies
         run: npm install
+      - name: testing
+        run: npm test
