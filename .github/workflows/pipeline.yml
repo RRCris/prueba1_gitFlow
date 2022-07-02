@@ -9,13 +9,16 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  testing:
+  stop-prev:
     runs-on: ubuntu-18.04
     steps:
       - name: cancel previus workflow
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{github.token}}
+  testing:
+    runs-on: ubuntu-18.04
+    steps:
       - name: checkout
         uses: actions/checkout@v3
         with:
@@ -28,6 +31,10 @@ jobs:
         run: npm ci
       - name: testing
         run: npm test
+  deploy:
+    needs: [testing]
+    runs-on: ubuntu-18.04
+    steps:
       - name: deploy to heroku
         if: ${{github.event_name == 'push'}}
         uses: akhileshns/heroku-deploy@v3.12.12
