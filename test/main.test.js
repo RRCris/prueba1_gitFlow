@@ -1,21 +1,21 @@
-const operations = require("../index");
+const { server, app } = require("../index");
+const supertest = require("supertest");
 
-describe("Operations basics", () => {
-  it("should return the sum of two numbers", () => {
-    expect(operations.sum(1, 2)).toBe(3);
+const api = supertest(app);
+describe("server", () => {
+  it("get", async () => {
+    const res = await api.get("/");
+    expect(res.status).toBe(200);
+    expect(res.body.msg).toBe("Ok");
   });
 
-  it("should return the res of two numbers", () => {
-    expect(operations.res(1, 2)).toBe(-1);
+  it("post", async () => {
+    const res = await api.post("/").query({ msg: "OK" });
+    expect(res.status).toBe(200);
+    expect(res.body.msg).toBe("Ok");
   });
 });
 
-describe("Operations medium", () => {
-  it("should return the div of two numbers", () => {
-    expect(operations.div(4, 2)).toBe(2);
-  });
-
-  it("should return the mul of two numbers", () => {
-    expect(operations.mul(3, 2)).toBe(6);
-  });
+afterAll(() => {
+  server.close();
 });

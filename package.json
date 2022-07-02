@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --silent main.test.js"
+    "test": "cross-env NODE_ENV=test jest --silent main.test.js",
+    "start":"node index.js"
   },
   "repository": {
     "type": "git",
