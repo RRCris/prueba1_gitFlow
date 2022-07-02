@@ -12,6 +12,10 @@ jobs:
   testing:
     runs-on: ubuntu-18.04
     steps:
+      - name: cancel previus workflow
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
       - name: checkout
         uses: actions/checkout@v3
         with:

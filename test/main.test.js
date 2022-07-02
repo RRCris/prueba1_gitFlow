@@ -4,7 +4,7 @@ const supertest = require("supertest");
 const api = supertest(app);
 describe("server", () => {
   it("get", async () => {
-    const res = await api.get("/");
+    const res = await api.get("/health");
     expect(res.status).toBe(200);
     expect(res.body.msg).toBe("Ok");
   });

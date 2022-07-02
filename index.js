@@ -8,7 +8,7 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.status(200).json({ msg: "Ok" });
+  res.status(200).json({ msg: "this is the main branch" });
 });
 
 app.post("/", (req, res) => {
