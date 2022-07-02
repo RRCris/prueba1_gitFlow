@@ -35,6 +35,10 @@ jobs:
     needs: [testing]
     runs-on: ubuntu-18.04
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-deps: 0
       - name: deploy to heroku
         if: ${{github.event_name == 'push'}}
         uses: akhileshns/heroku-deploy@v3.12.12
