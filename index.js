@@ -7,6 +7,10 @@ app.get("/health", (req, res) => {
   res.status(200).json({ msg: "Ok" });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "this is the main branch" });
+});
+
 app.post("/", (req, res) => {
   if (req.query.msg === "OK") {
     res.status(200).json({ msg: "Ok" });
