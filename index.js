@@ -15,6 +15,10 @@ app.get("/sports", (req, res) => {
   res.status(200).json({ sports: ["football", "basketball", "baseball"] });
 });
 
+app.get("/user", (req, res) => {
+  res.status(200).json({ user: ["jose", "daniel"] });
+});
+
 app.post("/", (req, res) => {
   if (req.query.msg === "OK") {
     res.status(200).json({ msg: "Ok" });
